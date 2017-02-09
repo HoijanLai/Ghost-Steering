@@ -22,7 +22,10 @@ Here is how the agent drives with `model.json` in the directory, turn on the sim
 ###### 2. The Autonomous Driving
  Here are three capture of the autonomous driving. The first one is on track 1, the second is on track 2 and the last one shows how the agent recover from deviation(`model_vgg.json`)  
 NOTE: None of my model is able to complete full track_2 so far and the vgg model drives like a drunk man.  
-  <img src="./md_img/track_1.gif" width="33%" height="33%">   <img src="./md_img/track_2.gif" width="33%" height="33%"> <img src="./md_img/recv.gif" width="33%" height="33%">
+
+&nbsp;&nbsp;&nbsp; <img src="./md_img/track_1.gif" width="30%" height="30%">
+&nbsp;&nbsp;&nbsp; <img src="./md_img/track_2.gif" width="30%" height="30%">
+&nbsp;&nbsp;&nbsp; <img src="./md_img/recv.gif" width="30%" height="30%">
 
 ### Pipeline
 ###### 1. Getting the Data
@@ -119,11 +122,12 @@ To prevent GRAM from exploding by data. I use generator to train the model. The 
 * Driving manner  
 I used keyboard to drive, mainly on the middle of the road in full speed available (about 30mph) to generate my own data for both tracks. And I mixed the sample data comes with the course materials to teach the agent how to recover from deviation.  
 You can pause recording while driving. So you can drive off the track while recording is off and record only how you recover.   
-![](./md_img/output.gif)  
+<div style = "text-align :center"><img src="./md_img/output.gif" width="40%" height="40%" align = "center"></div>
 
 * Distribution  
 A very natural phenomenon is, we will get a dataset whose majority is 0.0 steering angle. because track in real world are mostly straight connected by several bends. After I do a resampling to drop 90% of the 0.0 steering data, the data looks well in distribution. However in my case, the original gave better result.  
-<img src="./md_img/dis.png" width="40%" height="40%">  <img src="./md_img/dis_1.png" width="40%" height="40%">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="./md_img/dis.png" width="40%" height="40%"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="./md_img/dis_1.png" width="40%" height="40%">
 
 
 
